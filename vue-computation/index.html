@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Vue - Example</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+
+<body>
+    <div id="shopping-list">
+      <div id="vue-app">
+        <!--Computed Properties Start-->
+        <h1>Computation Properties</h1>
+        <button v-on:click="a++">Add to a</button>
+        <button v-on:click="b++">Add to b</button>
+          <p>A - {{ a }}</p>
+          <p>B - {{ b }}</p>
+          <p>Age plus A  = {{ addToA }}</p>
+          <p>Age plus B  = {{ addToB }}</p>
+          <!--Computed Properties End-->
+          <hr>
+          <!--Dynamic CSS Classes Start-->
+          <h1>Dynamic CSS Classes</h1>
+          <!-- <h3>Example 1</h3>
+          <div v-on:click="available = !available" v-bind:class="{available: available}">
+            <span>Jingesh</span>
+          </div> -->
+          <h3>Example 2</h3>
+        <div v-bind:class="compClasses">
+          <button v-on:click="nearby = !nearby">Toggle Nearby</button>
+          <button v-on:click="available = !available">Toggle Available</button>
+          <span>Joshi</span>
+        </div>
+          <!--Dynamic CSS Classes End-->
+          <hr>
+          <!--Conditional Statments Start-->
+          <h1>Conditionals</h1>
+          <button v-on:click="error = !error">Toggle Error</button>
+          <button v-on:click="success = !success">Toggle Error</button>
+
+          <p v-if="error"> Woops !! There is Error</p>
+          <p v-else-if="success"> Yeah.... Process Succesfull :)</p>
+
+          <!-- <p v-show="error"> Woops !! There is Error</p>
+          <p v-show="success"> Yeah.... Process Succesfull :)</p> -->
+
+          <!--v-show not remove element from dom it make the  Properties to disable  trough inlinse css-->
+          <!--v-if show html content if the condition is true or else it remove property from DOM-->
+
+          <!--Conditional Statments End-->
+          <hr>
+          <!--Looping with v-for Start-->
+          <h1>Looping with for</h1>
+          <h3>All Characters </h3>
+          <ul>
+            <li v-for=" character in characters">
+              {{ character }}
+            </li>
+          </ul>
+
+          <ul>
+            <li v-for=" (anim_character, index) in anim_charcters">
+              {{ index }}.{{ anim_character.name }} - {{ anim_character.charcter_from }}
+            </li>
+          </ul>
+
+          <template  v-for=" (anim_character, index) in anim_charcters">
+            <h3>{{ index }}.{{ anim_character.name }}</h3>
+            <p>{{ anim_character.charcter_from }}</p>
+          </template>
+          <br>
+          <template  v-for="anim_character in anim_charcters">
+            <div v-for="(index, key,val ) in anim_character">
+              <p>{{ index }}.{{ key }} - {{ val }}</p>
+            </div>
+          </template>
+          <!-- templete only use the content inside of <template tag and print it without including template tag  -->
+          <!--Looping with v-for End-->
+
+    </div>
+  </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
