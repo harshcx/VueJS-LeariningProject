@@ -1,6 +1,6 @@
 {
-    "name": "calculator",
-    "short_name": "calculator",
+    "name": "vue-calculator-pwa",
+    "short_name": "vue-calculatopwa",
     "icons": [{
             "src": "./img/icons/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -12,9 +12,8 @@
             "type": "image/png"
         }
     ],
-    "start_url": "./",
-    "display": "fullscreen",
-    "orientation": "portrait",
-    "background_color": "#2196f3",
-    "theme_color": "#2196f3"
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#4DBA87"
 }
